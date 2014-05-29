@@ -1,0 +1,20 @@
+{
+	"name": "meerkat/meerkat-ulogin",
+	"type": "kohana-module",
+	"description": "Auth module on Ulogin.ru for MeerkatCMF (on Kohana 3.3)",
+	"homepage": "https://github.com/aberdnikov/meerkat-ulogin",
+	"license": "MIT",
+	"keywords": ["kohana", "module", "meerkat"],
+	"authors": [
+				{
+					"name": "Alexey Berdnikov",
+					"email": "aberdnikov@gmail.com",
+					"homepage": "https://github.com/aberdnikov",
+					"role": "Module maintainer"
+			}
+	],
+	"require": {
+			"php": ">=5.3",
+			"meerkat/meerkat-core": "*"
+	} 	
+}

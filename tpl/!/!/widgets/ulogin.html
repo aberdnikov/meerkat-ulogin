@@ -1,0 +1,11 @@
+{% raw %}
+<script src="http://ulogin.ru/js/ulogin.js"></script>
+{% endraw %}
+
+{% if cfg.type =="window "%}
+	<a id="{{ uniq_id }}" href="#" x-ulogin-params="{{ params }}">
+		<img src="http://ulogin.ru/img/button.png" width=187 height=30 alt="ÌóëüòèÂõîä"/>
+	</a>
+{% else %}
+	<div id="{{ uniq_id }}" x-ulogin-params="{{ params }}"></div>
+{% endif %}

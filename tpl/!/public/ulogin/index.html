@@ -1,0 +1,43 @@
+{% extends "!/layouts/default" %}
+
+
+{% block body %}
+    {% if me('id') %}
+    <div class="row">
+        <div class="col-lg-6">
+            <fieldset>
+                <legend>Подключение новых аккаунтов </legend>
+                <div class="text-center">{{ widget('Ulogin')|raw }}</div>
+                <br /><br />
+                Просто выберите логотип сервиса, где у вас есть аккаунт и кликните на него.<br /><br />
+                И тогда, в дальнейшем, вы будете лишены всяческих проблем с запоминанием и восстановлением пароля к этому сайту, вход будет производиться в один клик.<br /><br />
+                Это удобно и безопасно!
+            </fieldset>
+        </div>
+        <div class="col-lg-6">
+            <fieldset>
+                <legend>Список подключенных аккаунтов</legend>
+                {{ widget('UloginAccounts')|raw }}
+            </fieldset>
+        </div>
+    </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3" data-original-title="">
+                <fieldset>
+                    <legend>Регистрация/вход через социальные сети</legend>
+                    <div class="text-center">{{ widget('Ulogin')|raw }}</div>
+                    <br /><br />
+                    Просто выберите логотип сервиса, где у вас есть аккаунт и кликните на него.<br /><br />
+                    И тогда, в дальнейшем, вы будете лишены всяческих проблем с запоминанием и восстановлением пароля к этому сайту, вход будет производиться в один клик.<br /><br />
+                    Это удобно и безопасно!
+                </fieldset>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block sidebar_left %}
+{% endblock %}
+{% block sidebar_rigth %}
+{% endblock %}

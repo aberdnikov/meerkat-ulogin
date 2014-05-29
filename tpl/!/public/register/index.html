@@ -1,0 +1,84 @@
+{% extends "!/layouts/default" %}
+
+{% block body %}
+    {% if openid %}
+        <div class="row">
+            <div class="col-lg-6">
+                Вы вошли на проект через социальную сеть как<br /><br />
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="{{ openid.photo }}" alt="{{ openid.username }}">
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ openid.username }}</h4>
+                            E-mail: {{ openid.email }}
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                или выбрать другую социальную сеть для входа:<hr class="soften soften-sm">
+                {{ widget('Ulogin')|raw }}
+            </div>
+        </div>
+        <div class="row">
+            <hr class="soften-sm">
+            <div class="alert alert-info">Необходимо завершить привязку аккаунта социальной сети</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Если вы уже зарегистрированы на проекте - ВОЙДИТЕ</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ widget('Form_Login')|raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Если вы еще не зарегистрированы на проекте - СОЗДАЙТЕ АККАУНТ</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ widget('Form_Register')|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Регистрация через социальные сети <b class="pull-right">(РЕКОМЕНДУЕТСЯ)</b></h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ widget('Ulogin')|raw }}
+                        <hr class="soften soften-sm">
+                        Просто выберите логотип сервиса, где у вас есть аккаунт и кликните на него.<br/><br/>
+                        И тогда, в дальнейшем, вы будете лишены всяческих проблем с запоминанием и восстановлением пароля к этому сайту, вход будет производиться в один клик.<br/><br/>
+                        Это удобно и безопасно!
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Классическая регистрация</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ widget('Form_Register')|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block sidebar_left %}
+{% endblock %}
+{% block sidebar_rigth %}
+{% endblock %}

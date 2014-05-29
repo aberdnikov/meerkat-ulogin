@@ -1,0 +1,15 @@
+{% for item in items %}
+<div class="media">
+    <a href="#" class="pull-left">
+        <img data-src="{{ item.photo }}" class="media-object" style="width:64px;height:64px" src="{{ item.photo }}">
+    </a>
+    <div class="media-body">
+        <span class="pull-right close" data-action="ulogin_free" data-id="{{ item.pk }}">&times;</span>
+        <!-- <div class="pull-right"><i class="icon-fam-cancel"></i></div>-->
+        <h4 class="media-heading"><a href="{{ item.identity }}" target="_blank">{{ item.network }}</a></h4>
+        {% if item.username %}<b>{{ item.username }}</b><br />{% endif %}
+        {% if item.email %}{{ item.email }}<br />{% endif %}
+
+    </div>
+</div>
+{% endfor %}
