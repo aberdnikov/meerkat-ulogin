@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"keywords": ["kohana", "module", "meerkat"],
 	"authors": [
-				{
+			{
 					"name": "Alexey Berdnikov",
 					"email": "aberdnikov@gmail.com",
 					"homepage": "https://github.com/aberdnikov",
